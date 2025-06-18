@@ -1,0 +1,285 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+header {
+  background: #fff;
+  padding: 1em 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+.section {
+  padding: 2em;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  margin: auto;
+  justify-content: center;
+  padding: 2em;
+}
+
+input, textarea {
+  padding: 0.8em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #6a0dad;
+  color: white;
+  padding: 0.8em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5500aa;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4em 2em;
+  gap: 3em;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.hero-left h1 {
+  font-size: 3.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.hero-left p {
+  font-size: 1.4em;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+
+.hero-buttons {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.8em 1.2em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  
+  justify-content: center;
+}
+
+.btn-icon i {
+  transition: transform 0.3s ease;
+}
+
+.btn-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(106, 13, 173, 0.3);
+}
+
+.btn-icon:hover i {
+  transform: rotate(-10deg);
+}
+
+.purple {
+  background: #6a0dad;
+  color: white;
+  border: none;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid #6a0dad;
+  color: #6a0dad;
+}
+
+
+
+.purple {
+  background: #6a0dad;
+  color: white;
+  border: none;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid #6a0dad;
+  color: #6a0dad;
+}
+
+.hero-image img {
+  max-width: 500px;
+  border-radius: 100px;
+}
+
+.casos {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.caso {
+  background: white;
+  border-radius: 8px;
+  padding: 1em;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.caso img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  padding: 1em;
+  background: #444;
+  color: white;
+  text-align: center;
+  margin-top: auto; /* rodapé final */
+}
+
+
+.hero-buttons + .hero-buttons {
+  margin-top: 1em;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4em 2em;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 1000px;
+  max-width: 1000px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 300px;
+}
+
+.hero-right img {
+  max-width: 150%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+/* Menu */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 1em 2em;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Estilo da lista do menu */
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo dos links do menu */
+.menu li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+  padding: 0.5em 0;
+  transition: color 0.3s ease;
+}
+
+/* Efeito de sublinhado animado */
+.menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #6a0dad;
+  transition: width 0.3s ease;
+}
+
+.menu li a:hover::after {
+  width: 100%;
+}
+
+.menu li a:hover {
+  color: #6a0dad;
+}
+
+.menu li a.active {
+  color: #6a0dad;
+}
+
+.menu li a.active::after {
+  width: 100%;
+}
+
+
