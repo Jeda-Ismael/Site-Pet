@@ -1,0 +1,10 @@
+.env
+public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/.htaccess
+
+legacy_old_site/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
