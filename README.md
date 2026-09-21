@@ -27,7 +27,9 @@ O **Encontre Seu Pet** ajuda tutores a divulgar pets desaparecidos e permite que
 | 🐕 | Campos detalhados: espécie, raça, porte, cor, sexo, contato, descrição |
 | ✅ | Botões para marcar um caso como **"Encontrado"** ou um pet como **"Adotado"**, saindo da lista de ativos |
 | 🔐 | Cadastro, login e logout com sessão segura |
-| 🎨 | Visual próprio, responsivo, com animações (Lottie) |
+| 🐱 | **Hero interativo**: o gato acompanha o mouse (sprite sheet de vídeo renderizado em `<canvas>`) |
+| 🧭 | Menu moderno em "pílula de vidro" (glassmorphism) com dropdown de perfil |
+| 🎨 | Visual próprio, responsivo, com paleta quente harmonizada com o vídeo do hero |
 
 ## 🛠 Stack
 
@@ -36,7 +38,12 @@ O **Encontre Seu Pet** ajuda tutores a divulgar pets desaparecidos e permite que
 - **Docker Compose** — sobe o ambiente inteiro com um comando, sem precisar instalar PHP/MySQL na máquina
 - **Apache** servindo a aplicação
 - **Adminer** para inspecionar o banco visualmente durante o desenvolvimento
-- CSS próprio (sem framework) + [Lottie](https://lottiefiles.com/) para as animações
+- CSS próprio (sem framework) + [Lottie](https://lottiefiles.com/) para o ícone animado do menu
+- **Canvas 2D + JavaScript** para o hero interativo (`public/cat-sprite.js`)
+
+## 🐱 Como funciona o hero interativo
+
+O vídeo do gato foi convertido com FFmpeg em uma **sprite sheet** (`public/gato-sprite.webp`, grade 8×4 = 32 frames, marca d'água removida com `delogo`). O script `cat-sprite.js` mapeia a posição horizontal do mouse para um frame, suaviza com easing e desenha apenas o frame atual via `ctx.drawImage()`. O layout é medido só no carregamento/resize (nunca no `mousemove`) para evitar travadas, e o gato volta ao frame inicial quando o mouse sai da página.
 
 ## 🔒 Segurança
 
@@ -91,6 +98,8 @@ docker compose down -v     # para e apaga o volume do banco (reset total)
 │   └── partials/          # header/footer compartilhados
 └── public/                # document root do Apache
     ├── index.php, casos.php, adocao.php, ...
+    ├── cat-sprite.js      # animação do gato (canvas)
+    ├── gato-sprite.webp   # sprite sheet 8×4 do hero
     └── uploads/           # imagens enviadas pelos usuários
 ```
 
