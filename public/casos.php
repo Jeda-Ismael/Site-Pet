@@ -14,7 +14,12 @@ partial('header', ['title' => 'Casos Ativos']);
 ?>
 
 <section class="section">
-  <h2>Casos de pets desaparecidos</h2>
+  <div class="section-header">
+    <h2>Casos de pets desaparecidos</h2>
+    <a href="<?= is_logged_in() ? 'cadastro.php' : 'loginpage.php'; ?>" class="btn-icon purple">
+      <i class="fas fa-plus"></i> Cadastrar caso
+    </a>
+  </div>
 
   <?php if (!empty($casos)): ?>
   <div class="filters-bar">

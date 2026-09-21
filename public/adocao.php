@@ -14,7 +14,12 @@ partial('header', ['title' => 'Pets para Adoção']);
 ?>
 
 <section class="section">
-  <h2>Pets para Adoção</h2>
+  <div class="section-header">
+    <h2>Pets para Adoção</h2>
+    <a href="<?= is_logged_in() ? 'cadastro_adocao.php' : 'loginpage.php'; ?>" class="btn-icon purple">
+      <i class="fas fa-plus"></i> Colocar para adoção
+    </a>
+  </div>
 
   <?php if (!empty($adocoes)): ?>
   <div class="filters-bar">
