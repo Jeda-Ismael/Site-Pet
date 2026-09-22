@@ -8,3 +8,5 @@ legacy_old_site/
 # Editor / OS
 .DS_Store
 Thumbs.db
+
+.claude/settings.local.json

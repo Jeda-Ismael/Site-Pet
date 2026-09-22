@@ -46,7 +46,8 @@ partial('header', ['title' => 'Casos Ativos']);
            data-local="<?= e(mb_strtolower($row['local'])) ?>"
            data-especie="<?= e($row['especie']) ?>">
         <div class="caso-img-wrap">
-          <img src="<?= e($row['imagem']) ?>" alt="Imagem do pet">
+          <img src="<?= e($row['imagem']) ?>" alt="Imagem do pet" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')" onload="if(this.naturalWidth<20||this.naturalHeight<20){this.style.display='none';this.nextElementSibling.classList.add('show')}">
+          <span class="caso-img-fallback"><i class="fas fa-paw"></i></span>
           <span class="caso-badge"><?= e($row['especie']) ?></span>
         </div>
         <h3><?= e($row['nome_pet']) ?></h3>

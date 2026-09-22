@@ -920,6 +920,21 @@ input[type="file"] {
   position: relative;
 }
 
+.caso-img-fallback {
+  display: none;
+  width: 100%;
+  height: 190px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--hero-grad-1), var(--hero-grad-3));
+  font-size: 2.4em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.caso-img-fallback.show {
+  display: flex;
+}
+
 .caso-badge {
   position: absolute;
   top: 0.7em;

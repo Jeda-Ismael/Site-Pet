@@ -45,7 +45,8 @@ partial('header', ['title' => 'Pets para Adoção']);
            data-nome="<?= e(mb_strtolower($r['nome_pet'])) ?>"
            data-especie="<?= e($r['especie']) ?>">
         <div class="caso-img-wrap">
-          <img src="<?= e($r['imagem']) ?>" alt="Imagem do pet">
+          <img src="<?= e($r['imagem']) ?>" alt="Imagem do pet" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')" onload="if(this.naturalWidth<20||this.naturalHeight<20){this.style.display='none';this.nextElementSibling.classList.add('show')}">
+          <span class="caso-img-fallback"><i class="fas fa-paw"></i></span>
           <span class="caso-badge"><?= e($r['especie']) ?></span>
         </div>
         <h3><?= e($r['nome_pet']) ?></h3>

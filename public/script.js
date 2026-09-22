@@ -50,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const onScroll = () => {
       overlayNavbar.classList.toggle('scrolled', window.scrollY > 40);
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll);
+    // adia a leitura inicial de scrollY pra depois do primeiro layout da página,
+    // evitando forçar um reflow síncrono ainda durante o carregamento
+    requestAnimationFrame(onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 });
